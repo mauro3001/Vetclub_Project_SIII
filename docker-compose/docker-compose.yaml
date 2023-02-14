@@ -1,0 +1,37 @@
+version: "3.2"
+
+services:
+
+  # Vetclub BD
+  mysql:
+    container_name: vetclub
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=mauricio
+      - MYSQL_DATABASE=vetclub
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql-vetclub-vol:/var/lib/mysql
+      - ./backends/persistent/:/docker-entrypoint-initdb.d
+
+  # Backend Vetclub
+  backend-vetclub:
+    container_name: Backend-Vetclub
+    image: mauro300501/vetclub:v5
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_DB_HOST=vetclub
+      - MYSQL_DB_PORT=3306
+      - MYSQL_DB_USERNAME=root
+      - MYSQL_DB_PASSWORD=mauricio
+
+  # Frontend Vetclub
+  frontend-vetclub:
+    container_name: Frontend-Vetclub
+    image: mauro300501/veterinaria:v1
+    ports:
+      - 4200:4200

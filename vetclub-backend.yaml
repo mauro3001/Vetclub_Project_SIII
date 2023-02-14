@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vetclub-backend-deployment
+  labels:
+    app: vetclub-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vetclub-backend
+  template:
+    metadata:
+      labels:
+        app: vetclub-backend
+    spec:
+      containers:
+      - name: vetclub-backend
+        image: mauro300501/vetclub:v1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MYSQL_DB_HOST
+          value: mysql-vetclub-service
+        - name: MYSQL_DB_PORT
+          value: "3306"
+        - name: MYSQL_DB_USERNAME
+          value: root
+        - name: MYSQL_DB_PASSWORD
+          value: mauricio
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vetclub-backend-service
+spec:
+  type: NodePort
+  selector:
+    app: vetclub-backend
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30100
