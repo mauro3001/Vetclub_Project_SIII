@@ -169,9 +169,9 @@ data:
 
 
     insert into profesional values(NULL, 1, "Camila Ardila", "camila@vet.com", "camilaAdmin");
-    insert into profesional values(NULL, 2, "Jose Ramirez", "jose@estil.com", "josearch");
+    insert into profesional values(NULL, 2, "Jose Ramirez", "jose@style.com", "josearch");
     insert into profesional values(NULL, 1, "Carlos Navas", "carlito@vet.com", "carlitoNava");
-    insert into profesional values(NULL, 2, "Ximena Rosales", "ximena@estile.com", "ximenita");
+    insert into profesional values(NULL, 2, "Ximena Rosales", "ximena@style.com", "ximenita");
 
 
     insert into tipo_proceso values(NULL, "Cita General", "Revisión general del animal", 30);
@@ -186,6 +186,15 @@ data:
     INSERT INTO usuario values(NULL, "veterinario", "veterinario@vetclub.com", 3152738452, "vetVetclub", "$2a$10$xugaIayFwghPnSiOcDVUoexY2OnZf12NNmEdyosIIgUtktvm6pb3O");
     INSERT INTO usuario values(NULL, "estilista", "estilista@vetclub.com", 3182538492, "estVetclub", "$2a$10$Ip.CP.og0W5xutlCofx2BOWeEEegHLIHo0TahaEChu13Cw4IYkRui");
 
+    INSERT INTO mascota values(NULL, 1, "Apolo", "Poodle", "No presenta historial");
+    INSERT INTO mascota values(NULL, 2, "Tom", "Siames", "Esterilizacion");
+    INSERT INTO mascota values(NULL, 1, "Rocky", "Rottweiler", "Operacion de hernias");
+    INSERT INTO mascota values(NULL, 2, "Mishi", "Bombay", "No presenta historial");
+
+    INSERT INTO cita values(NULL, 2, 1, 7, "paulaCr", "2023-02-08", "08:30:00");
+    INSERT INTO cita values(NULL, 1, 2, 3, "carloTb", "2023-02-13", "10:00:00");
+    INSERT INTO cita values(NULL, 4, 1, 5, "lauraAr", "2023-02-20", "02:30:00");
+    INSERT INTO cita values(NULL, 3, 2, 2, "dayronRa", "2023-02-25", "04:30:00");
 
     SET SQL_SAFE_UPDATES = 0;
 
