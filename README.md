@@ -8,4 +8,4 @@ Final project in kubernetes (DigitalOcean) about a veterinary clinic.
 - docker-compose (Es un compose de prueba, ejecutandose en local para detallar si nuestras imagenes fueron realizadas correctamente)
 
 - **Los tres deployments (.yaml) de la rama principal, son los más importantes ya que permiten realizar la configuración
-para enlazar la imagenes de nuestra aplicación, comunicando base de datos, con back y front**.
+para enlazar las imagenes de nuestra aplicación, comunicando base de datos, con back y front**.
