@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 import { Login } from '../models/login';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://206.189.51.37:30100/api/usuario"
+  url = `${environment.VETCLUB_URL}/api/usuario`;
 
   //metodo para llamar la informacion de los usuarios conectandose a bd y usando el backend
   obtenerUsuario():Observable<Usuario[]>{

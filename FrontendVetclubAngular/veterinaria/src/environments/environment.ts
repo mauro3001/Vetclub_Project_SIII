@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  VETCLUB_URL:
+    'http://206.189.51.37:30100',
 };
 
 /*

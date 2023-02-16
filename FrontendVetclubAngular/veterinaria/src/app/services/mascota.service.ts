@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { mostrarMascota } from '../models/mostrar-mascota';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class MascotaService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://206.189.51.37:30100/api/mascota";
+  url = `${environment.VETCLUB_URL}/api/mascota`;
 
   //metodo para llamar la informacion de las mascotas conectandose a la bd y usando la interfaz
   obtenerMascotas():Observable<mostrarMascota[]>{

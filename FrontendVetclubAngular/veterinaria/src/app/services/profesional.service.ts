@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Profesional } from '../models/profesional';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ProfesionalService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://206.189.51.37:30100/api/profesional"
+  url = `${environment.VETCLUB_URL}/api/profesional`
 
   //metodo para llamar la info de profesional conectados a bd y usando la interfaz
   obtenerProfesional():Observable<Profesional[]>{

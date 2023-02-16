@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Login } from '../models/login';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://206.189.51.37:30100/auth/token"
+  url = `${environment.VETCLUB_URL}/auth/token`;
 
   loginForm(form:Login): Observable<Login>{
     return this.http.post<Login>(this.url,form)

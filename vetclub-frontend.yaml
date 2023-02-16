@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: vetclub-frontend
-        image: mauro300501/veterinaria:1.0
+        image: mauro300501/veterinaria:2.0
         ports:
-        - containerPort: 4200
+        - containerPort: 80
         env:
         - name: VETCLUB_URL
           value: http://206.189.51.37:30100
@@ -33,6 +33,6 @@ spec:
     app: vetclub-frontend
   ports:
     - protocol: TCP
-      port: 4200
-      targetPort: 4200
+      port: 80
+      targetPort: 80
       nodePort: 30200
